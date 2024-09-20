@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad946efa6ca16b48b06aeeef46e3a51, type: 3}
+  m_Name: Database
+  m_EditorClassIdentifier: 
+  objectsData:
+  - <Name>k__BackingField: Destroyer
+    <ID>k__BackingField: 0
+    <Size>k__BackingField: {x: 1, y: 1}
+    <Prefab>k__BackingField: {fileID: 6285573483116645814, guid: fb7ffbb793261ad46894664c3c3a271c,
+      type: 3}
+  - <Name>k__BackingField: Battleship
+    <ID>k__BackingField: 1
+    <Size>k__BackingField: {x: 2, y: 1}
+    <Prefab>k__BackingField: {fileID: 5279438079929860209, guid: d6af086f1cac71f40b4e5d3287c4be11,
+      type: 3}
+  - <Name>k__BackingField: Tank
+    <ID>k__BackingField: 2
+    <Size>k__BackingField: {x: 2, y: 2}
+    <Prefab>k__BackingField: {fileID: 5169834381107977510, guid: 6d960186cd63ed0488cd1933aa261080,
+      type: 3}

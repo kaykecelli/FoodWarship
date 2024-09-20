@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
@@ -11,6 +13,8 @@ public class InputManager : MonoBehaviour
     private Vector3 lastPosition;
     ControlsPlayers inputMap;
     InputAction _mousePosition;
+
+    public event Action OnClicked, OnExit;
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,11 +23,22 @@ public class InputManager : MonoBehaviour
     private void OnEnable()
     {
         inputMap.PlayerActionMap.Enable();
-        //inputMap.PlayerActionMap.MouseClick.performed += ;
+        inputMap.PlayerActionMap.MouseClick.performed += EnterBuildingMode;
+        inputMap.PlayerActionMap.Exit.performed += ExitBuildingMode;
     }
 
-    
-    
+    private void EnterBuildingMode(InputAction.CallbackContext context)
+    {
+        OnClicked?.Invoke();
+    }
+
+    private void ExitBuildingMode(InputAction.CallbackContext context)
+    {
+        OnExit?.Invoke();
+    }
+
+    public bool IsPointerOverUI()
+        => EventSystem.current.IsPointerOverGameObject();
     public Vector3 GetMousePosition()
     {
         Vector3 mousePos = inputMap.PlayerActionMap.MousePosition.ReadValue<Vector2>();
