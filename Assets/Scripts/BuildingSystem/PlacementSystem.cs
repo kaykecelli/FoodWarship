@@ -16,6 +16,9 @@ public class PlacementSystem : MonoBehaviour
     private int selectedObjectIndex = -1;
 
     [SerializeField] private GameObject gridVisualization;
+    [SerializeField] private int maxShipsQuantity;
+    private int currentShipsQuantity;
+    private PlayerMatchManager playerMatchManager;
 
     private bool startPrevisualization;
     private GameObject preVisualizationObj;
@@ -35,6 +38,7 @@ public class PlacementSystem : MonoBehaviour
     {
         shipsData = new DataGrid();
         previewRender = cellIndicator.GetComponentInChildren<Renderer>();
+        playerMatchManager = gameObject.GetComponentInParent<PlayerMatchManager>();
     }
     public void StartPlacement(int ID)
     {
@@ -45,10 +49,6 @@ public class PlacementSystem : MonoBehaviour
             Debug.LogError($"No ID Found {ID}");
             return;
         }
-
-        gridVisualization.SetActive(true);
-        cellIndicator.SetActive(true);
-        mouseIndicator.SetActive(true);
         startPrevisualization = true;
         inputManager.OnClicked += PlaceStructure;
         inputManager.OnExit += StopPlacement;
@@ -57,23 +57,32 @@ public class PlacementSystem : MonoBehaviour
 
     private void PlaceStructure()
     {
-        if (inputManager.IsPointerOverUI())
+        if (currentShipsQuantity < maxShipsQuantity)
         {
-            return;
-        }
-        Vector3 mousePosition = inputManager.GetMousePosition();
-        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+            if (!playerMatchManager.isMyTurn && !MacthManager.instance.canPlaceShips)
+            {
+                return;
+            }
+            if (inputManager.IsPointerOverUI())
+            {
+                return;
+            }
+            Vector3 mousePosition = inputManager.GetMousePosition();
+            Vector3Int gridPosition = grid.WorldToCell(mousePosition);
 
-        bool placementValidity = GetPlacementValidity(gridPosition, selectedObjectIndex);
-        if (placementValidity == false)
-        {
-            return;
-        } 
-                           
-        GameObject newObj = Instantiate(databaseSO.objectsData[selectedObjectIndex].Prefab);
-        newObj.transform.position = grid.CellToWorld(gridPosition);
-        placedObjects.Add(newObj);
-        shipsData.AddObjectAt(gridPosition, databaseSO.objectsData[selectedObjectIndex].Size, databaseSO.objectsData[selectedObjectIndex].ID, placedObjects.Count -1);
+            bool placementValidity = GetPlacementValidity(gridPosition, selectedObjectIndex);
+            if (placementValidity == false)
+            {
+                return;
+            }
+
+            GameObject newObj = Instantiate(databaseSO.objectsData[selectedObjectIndex].Prefab);
+            newObj.transform.position = grid.CellToWorld(gridPosition);
+            placedObjects.Add(newObj);
+            shipsData.AddObjectAt(gridPosition, databaseSO.objectsData[selectedObjectIndex].Size, databaseSO.objectsData[selectedObjectIndex].ID, placedObjects.Count - 1);
+            currentShipsQuantity++;
+        }
+       
     }
 
     private bool GetPlacementValidity(Vector3Int gridPosition, int selectedObjectIndex)
@@ -81,13 +90,10 @@ public class PlacementSystem : MonoBehaviour
         return shipsData.CanPlaceObjectAt(gridPosition, databaseSO.objectsData[selectedObjectIndex].Size);
     }
 
-    private void StopPlacement()
+    public void StopPlacement()
     {
         selectedObjectIndex =  -1;
         Destroy(preVisualizationObj);
-        gridVisualization.SetActive(false);
-        cellIndicator.SetActive(false);
-        mouseIndicator.SetActive(false);
         inputManager.OnClicked -= PlaceStructure;
         inputManager.OnExit -= StopPlacement;
         startPrevisualization = false;
