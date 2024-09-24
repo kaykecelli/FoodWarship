@@ -20,11 +20,22 @@ public class PlacementSystem : MonoBehaviour
     private bool startPrevisualization;
     private GameObject preVisualizationObj;
     private Vector3Int gridPosition;
+
+    private DataGrid shipsData;
+
+    private Renderer previewRender;
+
+    private List<GameObject> placedObjects = new List<GameObject>();
     private void Start()
     {
         StopPlacement();
+        SetUp();
     }
-
+    private void SetUp()
+    {
+        shipsData = new DataGrid();
+        previewRender = cellIndicator.GetComponentInChildren<Renderer>();
+    }
     public void StartPlacement(int ID)
     {
         StopPlacement();
@@ -52,8 +63,22 @@ public class PlacementSystem : MonoBehaviour
         }
         Vector3 mousePosition = inputManager.GetMousePosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
-        GameObject newObj = Instantiate(databaseSO.objectsData[selectedObjectIndex].Prefab); 
+
+        bool placementValidity = GetPlacementValidity(gridPosition, selectedObjectIndex);
+        if (placementValidity == false)
+        {
+            return;
+        } 
+                           
+        GameObject newObj = Instantiate(databaseSO.objectsData[selectedObjectIndex].Prefab);
         newObj.transform.position = grid.CellToWorld(gridPosition);
+        placedObjects.Add(newObj);
+        shipsData.AddObjectAt(gridPosition, databaseSO.objectsData[selectedObjectIndex].Size, databaseSO.objectsData[selectedObjectIndex].ID, placedObjects.Count -1);
+    }
+
+    private bool GetPlacementValidity(Vector3Int gridPosition, int selectedObjectIndex)
+    {
+        return shipsData.CanPlaceObjectAt(gridPosition, databaseSO.objectsData[selectedObjectIndex].Size);
     }
 
     private void StopPlacement()
@@ -91,6 +116,10 @@ public class PlacementSystem : MonoBehaviour
     {
         Vector3 mousePosition = inputManager.GetMousePosition();
         gridPosition = grid.WorldToCell(mousePosition);
+        
+        bool placementValidity = GetPlacementValidity(gridPosition, selectedObjectIndex);
+        previewRender.material.color = placementValidity ? Color.white : Color.red;
+
         mouseIndicator.transform.position = mousePosition;
         cellIndicator.transform.position = grid.CellToWorld(gridPosition);
     }
