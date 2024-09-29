@@ -29,7 +29,7 @@ public class PlacementSystem : MonoBehaviour
     private Renderer previewRender;
 
     private List<GameObject> placedObjects = new List<GameObject>();
-    private void Start()
+    private void Awake()
     {
         StopPlacement();
         SetUp();

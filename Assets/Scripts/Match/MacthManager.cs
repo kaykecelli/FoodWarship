@@ -24,13 +24,15 @@ public class MacthManager : MonoBehaviour
         {
             Destroy(this);
         }
+        
     }
     private void Start()
     {
-       currentPlayer = startPlayer;
-       target = startTarget;       
-       ChooseTypeOfTurn();
+        currentPlayer = startPlayer;
+        target = startTarget;
+        ChooseTypeOfTurn();
     }
+
     private void ChooseTypeOfTurn()
     {
         currentPlayerMatchManager = currentPlayer.GetComponent<PlayerMatchManager>();
@@ -58,7 +60,6 @@ public class MacthManager : MonoBehaviour
 
     public void EndTurn(GameObject target, GameObject currentPlayer)
     {
-
        this.target = currentPlayer;
        this.currentPlayer = target;
 

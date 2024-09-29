@@ -9,31 +9,40 @@ public class PlayerMatchManager : MonoBehaviour
     public bool isMyTurn;
     public Grid grid {  get; private set; }
     [SerializeField] private GameObject target;
-    [SerializeField] GameObject ui, placementSystem;
-    private PlacementSystem placement;
+    [SerializeField] GameObject placementUI,attackUI, placementObj, gridVisualization, generalUI;
+    private PlacementSystem placementSystem;
+    private AttackSystem attackSystem;
     [SerializeField] CinemachineVirtualCamera cam;
 
-    private void Start()
+    private void Awake()
     {
-        placement = placementSystem.GetComponent<PlacementSystem>();
+        placementSystem = placementObj.GetComponent<PlacementSystem>();
+        attackSystem = placementObj.GetComponent<AttackSystem>();
     }
     [ContextMenu("End Turn")]
     public void EndTurn()
     {
         turnCounter++;
-        placement.StopPlacement();
-        cam.Priority = 2;
-        placementSystem.SetActive(false);
-        ui.SetActive(false);
+        placementSystem.StopPlacement();
+        cam.Priority = 0;
+        placementSystem.enabled = false;
+        attackSystem.enabled = false;
+        placementUI.SetActive(false);
+        attackUI.SetActive(false);
+        generalUI.SetActive(false);
         isMyTurn = false;
         MacthManager.instance.EndTurn(target, gameObject);
+        ChangeLayer();
     }
 
     public void PreparationTurnSetup()
     {
         Debug.Log("PreparationTurn");
-        ui.SetActive(true);
-        placementSystem.SetActive(true);
+        placementUI.SetActive(true);
+        generalUI.SetActive(true);
+        attackUI.SetActive(false);
+        placementSystem.enabled = true;
+        attackSystem.enabled = false;
         isMyTurn = true;
         cam.Priority = 4;
     }
@@ -41,9 +50,25 @@ public class PlayerMatchManager : MonoBehaviour
     public void AttackTurnSetup()
     {
         Debug.Log("AttackTurn");
-        placementSystem.SetActive(true);
+        attackUI.SetActive(true);
+        generalUI.SetActive(true);
+        attackSystem.enabled = true;
         cam.Priority = 4;
         isMyTurn = true;
+        ChangeLayer();
+    }
+
+    private void ChangeLayer()
+    {
+        if (isMyTurn)
+        {
+            gridVisualization.layer = LayerMask.NameToLayer("Placement");
+        }
+        else
+        {
+            gridVisualization.layer = LayerMask.NameToLayer("Target");
+        }
+       Debug.Log(LayerMask.NameToLayer("Target"));
     }
     
 }
