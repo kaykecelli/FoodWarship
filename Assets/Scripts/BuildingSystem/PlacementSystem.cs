@@ -34,6 +34,11 @@ public class PlacementSystem : MonoBehaviour
         StopPlacement();
         SetUp();
     }
+    private void OnDisable()
+    {
+        inputManager.OnClicked -= PlaceStructure;
+        inputManager.OnExit -= StopPlacement;
+    }
     private void SetUp()
     {
         shipsData = new DataGrid();
