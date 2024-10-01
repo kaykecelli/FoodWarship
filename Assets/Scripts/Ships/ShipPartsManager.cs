@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class ShipPartsManager : MonoBehaviour
 {
-    ShipsManager shipsManager;
+    private ShipsManager shipsManager;
+    private Renderer render;
     private void Start()
     {
-        shipsManager = GetComponentInParent<ShipsManager>();   
+        shipsManager = GetComponentInParent<ShipsManager>(); 
+        render = gameObject.GetComponent<Renderer>();
     }
     private void OnTriggerEnter(Collider other)
     {
-        Bullet bulletScrit = other.gameObject.GetComponent<Bullet>();
-        if (bulletScrit != null)
+        Debug.Log(other);
+        Bullet bulletScript = other.GetComponentInParent<Bullet>();
+        if (bulletScript != null)
         {
             shipsManager.shipLife--;
             shipsManager.CheckIsAlive();
+            render.material.color = Color.red;
         }
     }
 }
