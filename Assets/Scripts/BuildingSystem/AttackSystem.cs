@@ -11,7 +11,6 @@ public class AttackSystem : MonoBehaviour
     [SerializeField] private InputManager inputManager;
    
     [SerializeField] private Grid enemyGrid;
-    [SerializeField] private CinemachineVirtualCamera[] vCameras;
 
 
     [Header("Bullet Variables")]
@@ -23,7 +22,6 @@ public class AttackSystem : MonoBehaviour
     GameObject attackMarker;
     Vector3 mousePosition;
     Vector3Int gridPosition;
-    private int index = 1;
     private int attackCounter;
     private void OnEnable()
     {
@@ -76,7 +74,6 @@ public class AttackSystem : MonoBehaviour
                 GameObject bullet = Instantiate(bulletPrefab, firePosition.transform.position, Quaternion.identity);
                 bullet.GetComponent<Bullet>().pointB = attacksPosition[i];
                 bullet.GetComponent<Bullet>().CallShoot();
-                Debug.Log(attacksPosition[i]);
                 attacksPosition.RemoveAt(i);
                 //Destroy(attackMarkersGameObject[0]);
                 // attackMarkersGameObject.RemoveAt(0);
@@ -91,23 +88,5 @@ public class AttackSystem : MonoBehaviour
         }
     }
 
-    public void ChangeCamera()
-    {
-        if(index >= vCameras.Length)
-        {
-            index = 0;
-        }
-
-        vCameras[index].Priority = 5;
-        for (int i = 0; i < vCameras.Length; i++)
-        {
-            if (vCameras[i] != vCameras[index])
-            {
-                vCameras[i].Priority = 0;
-            }
-        }
-
-        index++;
-    }
     
 }

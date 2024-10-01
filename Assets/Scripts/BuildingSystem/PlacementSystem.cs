@@ -17,6 +17,7 @@ public class PlacementSystem : MonoBehaviour
 
     [SerializeField] private GameObject gridVisualization;
     [SerializeField] private int maxShipsQuantity;
+
     private int currentShipsQuantity;
     private PlayerMatchManager playerMatchManager;
 
@@ -81,7 +82,8 @@ public class PlacementSystem : MonoBehaviour
                 return;
             }
 
-            GameObject newObj = Instantiate(databaseSO.objectsData[selectedObjectIndex].Prefab);
+            GameObject newObj = Instantiate(databaseSO.objectsData[selectedObjectIndex].Prefab,transform.parent);
+            newObj.GetComponent<ShipsManager>().InPlacement();    
             newObj.transform.position = grid.CellToWorld(gridPosition);
             placedObjects.Add(newObj);
             shipsData.AddObjectAt(gridPosition, databaseSO.objectsData[selectedObjectIndex].Size, databaseSO.objectsData[selectedObjectIndex].ID, placedObjects.Count - 1);

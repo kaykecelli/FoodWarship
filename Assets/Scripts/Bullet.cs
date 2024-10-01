@@ -33,6 +33,7 @@ public class Bullet : MonoBehaviour
 
         // Ensure the final position is exactly at point B
         transform.position = end;
+        Destroy(gameObject,0.2f);
     }
 
 }

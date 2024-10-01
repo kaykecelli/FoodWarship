@@ -1,4 +1,5 @@
 using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +13,10 @@ public class PlayerMatchManager : MonoBehaviour
     [SerializeField] GameObject placementUI,attackUI, placementObj, gridVisualization, generalUI;
     private PlacementSystem placementSystem;
     private AttackSystem attackSystem;
-    [SerializeField] CinemachineVirtualCamera cam;
+    [SerializeField] private CinemachineVirtualCamera[] vCameras;
+    private int index;
 
+    public event Action OnEnableShips, OnDisableShips;
     private void Awake()
     {
         placementSystem = placementObj.GetComponent<PlacementSystem>();
@@ -22,9 +25,10 @@ public class PlayerMatchManager : MonoBehaviour
     [ContextMenu("End Turn")]
     public void EndTurn()
     {
+        OnDisableShips?.Invoke();
         turnCounter++;
         placementSystem.StopPlacement();
-        cam.Priority = 0;
+        vCameras[index].Priority = 0;
         placementSystem.enabled = false;
         attackSystem.enabled = false;
         placementUI.SetActive(false);
@@ -44,16 +48,17 @@ public class PlayerMatchManager : MonoBehaviour
         placementSystem.enabled = true;
         attackSystem.enabled = false;
         isMyTurn = true;
-        cam.Priority = 4;
+        vCameras[index].Priority = 4;
     }
 
     public void AttackTurnSetup()
     {
+        OnEnableShips?.Invoke();
         Debug.Log("AttackTurn");
         attackUI.SetActive(true);
         generalUI.SetActive(true);
         attackSystem.enabled = true;
-        cam.Priority = 4;
+        vCameras[index].Priority = 4;
         isMyTurn = true;
         ChangeLayer();
     }
@@ -70,5 +75,23 @@ public class PlayerMatchManager : MonoBehaviour
         }
        Debug.Log(LayerMask.NameToLayer("Target"));
     }
-    
+    public void ChangeCamera()
+    {
+        
+        index++;
+        if (index >= vCameras.Length)
+        {
+            index = 0;
+        }
+
+        vCameras[index].Priority = 5;
+        for (int i = 0; i < vCameras.Length; i++)
+        {
+            if (vCameras[i] != vCameras[index])
+            {
+                vCameras[i].Priority = 0;
+            }
+        }
+    }
+
 }

@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,9 +9,13 @@ public class MacthManager : MonoBehaviour
     public static MacthManager instance;
 
    [SerializeField] private GameObject startTarget, startPlayer;
+   [SerializeField] private CinemachineVirtualCamera transitionCamera;
 
     private GameObject target, currentPlayer;
     private PlayerMatchManager currentPlayerMatchManager, targetPlayerMatchManager;
+
+    [SerializeField] private GameObject ui;
+    private string turnToCall;
     public bool canPlaceShips {  get; private set; }
     public bool canAttack {  get; private set; }
 
@@ -30,7 +35,8 @@ public class MacthManager : MonoBehaviour
     {
         currentPlayer = startPlayer;
         target = startTarget;
-        ChooseTypeOfTurn();
+        currentPlayerMatchManager = currentPlayer.GetComponent<PlayerMatchManager>();
+        PreparationTurn();
     }
 
     private void ChooseTypeOfTurn()
@@ -39,10 +45,10 @@ public class MacthManager : MonoBehaviour
 
         if(currentPlayerMatchManager.turnCounter <= 0)
         {
-            PreparationTurn();
+            turnToCall = "PreparationTurn";
             return;
         }
-        AttackTurn();
+        turnToCall = "AttackTurn";
     }
 
     private void AttackTurn()
@@ -66,6 +72,14 @@ public class MacthManager : MonoBehaviour
         targetPlayerMatchManager = target.GetComponent<PlayerMatchManager>();
 
         ChooseTypeOfTurn();
+        transitionCamera.Priority = 4;
+        ui.SetActive(true);
     }
   
+    public void StartNextRound()
+    {
+        Invoke(turnToCall, 0f);
+        transitionCamera.Priority = 0;
+        ui.SetActive(false);
+    }
 }
