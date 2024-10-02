@@ -87,6 +87,8 @@ public class PlacementSystem : MonoBehaviour
             newObj.transform.position = grid.CellToWorld(gridPosition);
             placedObjects.Add(newObj);
             shipsData.AddObjectAt(gridPosition, databaseSO.objectsData[selectedObjectIndex].Size, databaseSO.objectsData[selectedObjectIndex].ID, placedObjects.Count - 1);
+            playerMatchManager.shipCounter++;
+            playerMatchManager.AtualizeUICounter(maxShipsQuantity);
             currentShipsQuantity++;
         }
        

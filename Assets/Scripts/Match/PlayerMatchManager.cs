@@ -2,6 +2,7 @@ using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMatchManager : MonoBehaviour
@@ -16,13 +17,16 @@ public class PlayerMatchManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera[] vCameras;
     private int index;
 
+    [Header("Ship counter")]
+    [HideInInspector]public int shipCounter;
+    [SerializeField] private TextMeshProUGUI counterUI;
+
     public event Action OnEnableShips, OnDisableShips;
     private void Awake()
     {
         placementSystem = placementObj.GetComponent<PlacementSystem>();
         attackSystem = placementObj.GetComponent<AttackSystem>();
     }
-    [ContextMenu("End Turn")]
     public void EndTurn()
     {
         OnDisableShips?.Invoke();
@@ -93,5 +97,16 @@ public class PlayerMatchManager : MonoBehaviour
             }
         }
     }
+    public void IsAlive()
+    {
+        if(shipCounter <= 0)
+        {
+            MacthManager.instance.Win(target);
+        }
+    }
 
+    public void AtualizeUICounter(int maxValue)
+    {
+        counterUI.text = shipCounter.ToString() + "/" + maxValue.ToString();
+    }
 }

@@ -20,8 +20,11 @@ public class ShipsManager : MonoBehaviour
     }
     private void OnDisable()
     {
-        playerMatchManager.OnEnableShips -= EnableShips;
-        playerMatchManager.OnDisableShips -= DisableShips;
+        if(playerMatchManager != null)
+        {
+            playerMatchManager.OnEnableShips -= EnableShips;
+            playerMatchManager.OnDisableShips -= DisableShips;
+        }
     }
     private void GetAllMeshRender()
     {
@@ -50,8 +53,10 @@ public class ShipsManager : MonoBehaviour
     }
     public void CheckIsAlive()
     {
-        if(shipLife == 0)
+        if(shipLife <= 0)
         {
+            playerMatchManager.shipCounter--;
+            playerMatchManager.IsAlive();
             Destroy(gameObject);
         }
     }

@@ -2,6 +2,7 @@ using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MacthManager : MonoBehaviour
@@ -10,7 +11,7 @@ public class MacthManager : MonoBehaviour
 
    [SerializeField] private GameObject startTarget, startPlayer;
    [SerializeField] private CinemachineVirtualCamera transitionCamera;
-
+   [SerializeField] private GameObject winUI;
     private GameObject target, currentPlayer;
     private PlayerMatchManager currentPlayerMatchManager, targetPlayerMatchManager;
 
@@ -81,5 +82,11 @@ public class MacthManager : MonoBehaviour
         Invoke(turnToCall, 0f);
         transitionCamera.Priority = 0;
         ui.SetActive(false);
+    }
+    public void Win(GameObject winner)
+    {
+        winUI.SetActive(true);
+        TextMeshProUGUI winnerText = winUI.GetComponentInChildren<TextMeshProUGUI>();
+        winnerText.text = "Winner: " + winner.name;
     }
 }

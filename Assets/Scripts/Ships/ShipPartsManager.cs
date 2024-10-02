@@ -18,8 +18,8 @@ public class ShipPartsManager : MonoBehaviour
         if (bulletScript != null)
         {
             shipsManager.shipLife--;
-            shipsManager.CheckIsAlive();
             render.material.color = Color.red;
+            shipsManager.CheckIsAlive();
         }
     }
 }
