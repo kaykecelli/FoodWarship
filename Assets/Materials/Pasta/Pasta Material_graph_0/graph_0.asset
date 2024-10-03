@@ -1,0 +1,562 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed5864476f84ce4b85454db09ca4eaa, type: 3}
+  m_Name: graph_0
+  m_EditorClassIdentifier: 
+  AssetPath: Assets/Materials/Pasta/Pasta Material.sbsar
+  RawData: {fileID: -244192453324840774, guid: a038a87426c004c41bcf99edaabf6c3f, type: 3}
+  Name: graph_0
+  IsRoot: 1
+  FlagedForDelete: 0
+  GUID: e16c4ea4-8a47-45fe-89b1-78dd08a20a70
+  Index: 0
+  Input:
+  - rid: 1875261145875742774
+  - rid: 1875261145875742775
+  - rid: 1875261145875742776
+  - rid: 1875261145875742777
+  - rid: 1875261145875742778
+  - rid: 1875261145875742779
+  - rid: 1875261145875742780
+  - rid: 1875261145875742781
+  - rid: 1875261145875742782
+  - rid: 1875261145875742783
+  - rid: 1875261145875742784
+  - rid: 1875261145875742785
+  - rid: 1875261145875742786
+  - rid: 1875261145875742787
+  - rid: 1875261145875742788
+  - rid: 1875261145875742789
+  Output:
+  - Index: 0
+    VirtualOutputIndex: 6
+    Description:
+      Identifier: normal
+      Label: normal
+      Index: 0
+      Type: 8
+      Channel: normal
+    OutputTexture: {fileID: 2800000, guid: 1cffbbd8a82e6d54eb92b95a8e668e49, type: 3}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 0
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: _NormalMap
+  - Index: 1
+    VirtualOutputIndex: 7
+    Description:
+      Identifier: roughness
+      Label: roughness
+      Index: 1
+      Type: 8
+      Channel: roughness
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: _RoughnessMap
+  - Index: 2
+    VirtualOutputIndex: 8
+    Description:
+      Identifier: height
+      Label: height
+      Index: 2
+      Type: 8
+      Channel: height
+    OutputTexture: {fileID: 2800000, guid: c1ae6be28b237b941b4ccd6eec07a19e, type: 3}
+    sRGB: 1
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: _HeightMap
+  - Index: 3
+    VirtualOutputIndex: 9
+    Description:
+      Identifier: ambientOcclusion
+      Label: ambientOcclusion
+      Index: 3
+      Type: 8
+      Channel: ambientOcclusion
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: _OcclusionMap
+  - Index: 4
+    VirtualOutputIndex: 10
+    Description:
+      Identifier: baseColor
+      Label: baseColor
+      Index: 4
+      Type: 8
+      Channel: baseColor
+    OutputTexture: {fileID: 2800000, guid: ca05e3ebd7c723847b41fd98afd99678, type: 3}
+    sRGB: 1
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: _BaseColorMap
+  - Index: 5
+    VirtualOutputIndex: 5
+    Description:
+      Identifier: mask
+      Label: mask
+      Index: 5
+      Type: 8
+      Channel: mask
+    OutputTexture: {fileID: 2800000, guid: 1d634776faae6a7428a0bbd664076c31, type: 3}
+    sRGB: 0
+    IsVirtual: 1
+    IsAlphaAssignable: 0
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 4
+    MaterialTextureTarget: _MaskMap
+  HasPhysicalSize: 0
+  PhysicalSize: {x: 0, y: 0, z: 0}
+  EnablePhysicalSize: 0
+  Thumbnail: 
+  CurrentStatePreset: " <sbspreset pkgurl=\"pkg://Spaghetti\" label=\"\" >\n  <presetinput
+    identifier=\"$outputsize\" uid=\"1490157518\" type=\"8\" value=\"10,10\" />\n 
+    <presetinput identifier=\"roughness_sauce\" uid=\"949423365\" type=\"0\" value=\"0.96\"
+    />\n  <presetinput identifier=\"sauce_spill_color_intensity\" uid=\"949308381\"
+    type=\"0\" value=\"0.76\" />\n  <presetinput identifier=\"sauce_spill_height_intensity\"
+    uid=\"949296761\" type=\"0\" value=\"3.88\" />\n  <presetinput identifier=\"sauce_height_level\"
+    uid=\"949303713\" type=\"0\" value=\"0.842\" />\n  <presetinput identifier=\"sauce_dirt\"
+    uid=\"948978874\" type=\"0\" value=\"0.57\" />\n  <presetinput identifier=\"meatball_coast_sauce\"
+    uid=\"949200454\" type=\"0\" value=\"4.93\" />\n  <presetinput identifier=\"roughness_meatball\"
+    uid=\"949423087\" type=\"0\" value=\"0.56\" />\n  <presetinput identifier=\"roughness_pasta\"
+    uid=\"949422139\" type=\"0\" value=\"0.75\" />\n  <presetinput identifier=\"normal_pasta_noise\"
+    uid=\"949472399\" type=\"0\" value=\"0.012\" />\n  <presetinput identifier=\"which_pasta_to_choose\"
+    uid=\"948999535\" type=\"4\" value=\"1\" />\n </sbspreset>\n"
+  IsRuntimeOnly: 0
+  GenerateAllOutputs: 0
+  GenerateAllMipmaps: 1
+  OutputMaterial: {fileID: 2100000, guid: 22a47c074fd5b544aaff863bebbcf0ad, type: 2}
+  DefaultPreset: " <sbspreset pkgurl=\"pkg://Spaghetti\" label=\"\" >\n  <presetinput
+    identifier=\"$outputsize\" uid=\"1490157518\" type=\"8\" value=\"10,10\" />\n
+    </sbspreset>\n"
+  MaterialShader: HDRP/Lit
+  RenderTextures: 0
+  OutputRemaped: 0
+  Presets:
+  - Info:
+      Label: Spaghetti No Sauce
+      Description: 
+      URL: pkg://Spaghetti
+    PresetIndex: 0
+    PresetValue: 
+    NativePreset: 1
+  - Info:
+      Label: Spaghetti With Sauce
+      Description: 
+      URL: pkg://Spaghetti
+    PresetIndex: 1
+    PresetValue: 
+    NativePreset: 1
+  - Info:
+      Label: Fusili No Sauce
+      Description: 
+      URL: pkg://Spaghetti
+    PresetIndex: 2
+    PresetValue: 
+    NativePreset: 1
+  - Info:
+      Label: Fusili With Sauce
+      Description: 
+      URL: pkg://Spaghetti
+    PresetIndex: 3
+    PresetValue: 
+    NativePreset: 1
+  - Info:
+      Label: Gnocchi No Sauce
+      Description: 
+      URL: pkg://Spaghetti
+    PresetIndex: 4
+    PresetValue: 
+    NativePreset: 1
+  - Info:
+      Label: Gnocchi With Sauce
+      Description: 
+      URL: pkg://Spaghetti
+    PresetIndex: 5
+    PresetValue: 
+    NativePreset: 1
+  - Info:
+      Label: Penne No Sauce
+      Description: 
+      URL: pkg://Spaghetti
+    PresetIndex: 6
+    PresetValue: 
+    NativePreset: 1
+  - Info:
+      Label: Penne With Sauce
+      Description: 
+      URL: pkg://Spaghetti
+    PresetIndex: 7
+    PresetValue: 
+    NativePreset: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 1875261145875742774
+      type: {class: SubstanceInputInt2, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 0
+        Description:
+          Identifier: $outputsize
+          Label: $outputsize
+          GuiGroup: 
+          GuiDescription: 
+          Type: 5
+          WidgetType: 0
+        Data: {x: 10, y: 10}
+        NumericalDescription:
+          DefaultValue: {x: 8, y: 8}
+          MinValue: {x: 0, y: 0}
+          MaxValue: {x: 1, y: 1}
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742775
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 1
+        Description:
+          Identifier: $randomseed
+          Label: $randomseed
+          GuiGroup: 
+          GuiDescription: 
+          Type: 4
+          WidgetType: 0
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742776
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 2
+        Description:
+          Identifier: roughness_general_intensity
+          Label: General Intensity Roughness
+          GuiGroup: 
+          GuiDescription: The <b>Color Output</b> parameter creates a uniform color
+            output image
+          Type: 0
+          WidgetType: 3
+        Data: 0.16
+        NumericalDescription:
+          DefaultValue: 0.16
+          MinValue: 0
+          MaxValue: 0
+          SliderStep: 0
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742777
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 3
+        Description:
+          Identifier: roughness_sauce
+          Label: Sauce Roughness
+          GuiGroup: 
+          GuiDescription: The <b>Opacity</b> parameter sets the transparency of the
+            blend
+          Type: 0
+          WidgetType: 1
+        Data: 0.96
+        NumericalDescription:
+          DefaultValue: 0.93
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742778
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 4
+        Description:
+          Identifier: sauce_spill_color_intensity
+          Label: Sauce Spill Color Intensity
+          GuiGroup: 
+          GuiDescription: The <b>Opacity</b> parameter sets the transparency of the
+            blend
+          Type: 0
+          WidgetType: 1
+        Data: 0.76
+        NumericalDescription:
+          DefaultValue: 0.61
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742779
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 5
+        Description:
+          Identifier: sauce_spill_height_intensity
+          Label: Sauce Spill Height Intensity
+          GuiGroup: 
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 3.88
+        NumericalDescription:
+          DefaultValue: 3.5
+          MinValue: 0
+          MaxValue: 50
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742780
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 6
+        Description:
+          Identifier: sauce_height_level
+          Label: Sauce Level Amount
+          GuiGroup: 
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.842
+        NumericalDescription:
+          DefaultValue: 0.76
+          MinValue: 0.35
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742781
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 7
+        Description:
+          Identifier: normal_sauce_noise
+          Label: Sauce Normal Map Noise
+          GuiGroup: 
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 1
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742782
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 8
+        Description:
+          Identifier: sauce_dirt
+          Label: Sauce Dirt
+          GuiGroup: 
+          GuiDescription: The <b>Level in mid</b> parameter defines the input image's
+            midtone levels
+          Type: 0
+          WidgetType: 1
+        Data: 0.57
+        NumericalDescription:
+          DefaultValue: 0.51
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742783
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 9
+        Description:
+          Identifier: meatball_coast_sauce
+          Label: Meatball Coast Sauce
+          GuiGroup: 
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 4.93
+        NumericalDescription:
+          DefaultValue: 1.54
+          MinValue: 0
+          MaxValue: 10
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742784
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 10
+        Description:
+          Identifier: meatball_a_amount
+          Label: Meatball A Amount
+          GuiGroup: 
+          GuiDescription: 
+          Type: 4
+          WidgetType: 1
+        Data: 3
+        NumericalDescription:
+          DefaultValue: 3
+          MinValue: 1
+          MaxValue: 64
+          SliderStep: 1
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742785
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 11
+        Description:
+          Identifier: meatball_b_amount
+          Label: Meatball B Amount
+          GuiGroup: 
+          GuiDescription: 
+          Type: 4
+          WidgetType: 1
+        Data: 4
+        NumericalDescription:
+          DefaultValue: 4
+          MinValue: 1
+          MaxValue: 64
+          SliderStep: 1
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742786
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 12
+        Description:
+          Identifier: roughness_meatball
+          Label: Meatball Roughness
+          GuiGroup: 
+          GuiDescription: The <b>Opacity</b> parameter sets the transparency of the
+            blend
+          Type: 0
+          WidgetType: 1
+        Data: 0.56
+        NumericalDescription:
+          DefaultValue: 0.34
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742787
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 13
+        Description:
+          Identifier: roughness_pasta
+          Label: Pasta Roughness
+          GuiGroup: 
+          GuiDescription: The <b>Opacity</b> parameter sets the transparency of the
+            blend
+          Type: 0
+          WidgetType: 1
+        Data: 0.75
+        NumericalDescription:
+          DefaultValue: 0.86
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742788
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 14
+        Description:
+          Identifier: normal_pasta_noise
+          Label: Pasta Normal Map Noise
+          GuiGroup: 
+          GuiDescription: 
+          Type: 0
+          WidgetType: 1
+        Data: 0.012
+        NumericalDescription:
+          DefaultValue: 0.04
+          MinValue: 0
+          MaxValue: 0.1
+          SliderStep: 0.001
+          SliderClamp: 1
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742789
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 15
+        Description:
+          Identifier: which_pasta_to_choose
+          Label: Which Pasta
+          GuiGroup: 
+          GuiDescription: '1 - Spaghetti
+
+            2 - Penne
+
+            3 -
+            Fusili
+
+            4 - Gnocchi'
+          Type: 4
+          WidgetType: 1
+        Data: 1
+        NumericalDescription:
+          DefaultValue: 3
+          MinValue: 1
+          MaxValue: 4
+          SliderStep: 1
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []

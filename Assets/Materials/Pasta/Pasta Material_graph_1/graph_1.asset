@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eed5864476f84ce4b85454db09ca4eaa, type: 3}
+  m_Name: graph_1
+  m_EditorClassIdentifier: 
+  AssetPath: Assets/Materials/Pasta/Pasta Material.sbsar
+  RawData: {fileID: -244192453324840774, guid: a038a87426c004c41bcf99edaabf6c3f, type: 3}
+  Name: graph_1
+  IsRoot: 1
+  FlagedForDelete: 0
+  GUID: 8e66b3cf-7044-4d82-88e8-91d465f20cc4
+  Index: 1
+  Input:
+  - rid: 1875261145875742736
+  - rid: 1875261145875742737
+  - rid: 1875261145875742738
+  - rid: 1875261145875742739
+  - rid: 1875261145875742740
+  - rid: 1875261145875742741
+  Output:
+  - Index: 0
+    VirtualOutputIndex: 2
+    Description:
+      Identifier: output
+      Label: output
+      Index: 0
+      Type: 8
+      Channel: unkown
+    OutputTexture: {fileID: 0}
+    sRGB: 0
+    IsVirtual: 0
+    IsAlphaAssignable: 1
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 0
+    MaterialTextureTarget: 
+  - Index: 1
+    VirtualOutputIndex: 1
+    Description:
+      Identifier: mask
+      Label: mask
+      Index: 1
+      Type: 8
+      Channel: mask
+    OutputTexture: {fileID: 2800000, guid: bb2b616ea9366224bb58334013751ca8, type: 3}
+    sRGB: 0
+    IsVirtual: 1
+    IsAlphaAssignable: 0
+    AlphaChannel: 
+    InvertAssignedAlpha: 0
+    Flags: 6
+    MaterialTextureTarget: _MaskMap
+  HasPhysicalSize: 0
+  PhysicalSize: {x: 0, y: 0, z: 0}
+  EnablePhysicalSize: 0
+  Thumbnail: 
+  CurrentStatePreset: 
+  IsRuntimeOnly: 0
+  GenerateAllOutputs: 0
+  GenerateAllMipmaps: 1
+  OutputMaterial: {fileID: 2100000, guid: 8367ac9313ed2a54da9033deae79ddf6, type: 2}
+  DefaultPreset: " <sbspreset pkgurl=\"pkg://pasta_layering\" label=\"\" >\n  <presetinput
+    identifier=\"$outputsize\" uid=\"3172036659\" type=\"8\" value=\"10,10\" />\n
+    </sbspreset>\n"
+  MaterialShader: HDRP/Lit
+  RenderTextures: 0
+  OutputRemaped: 0
+  Presets: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 1875261145875742736
+      type: {class: SubstanceInputInt2, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 0
+        Description:
+          Identifier: $outputsize
+          Label: $outputsize
+          GuiGroup: 
+          GuiDescription: 
+          Type: 5
+          WidgetType: 0
+        Data: {x: 10, y: 10}
+        NumericalDescription:
+          DefaultValue: {x: 8, y: 8}
+          MinValue: {x: 0, y: 0}
+          MaxValue: {x: 1, y: 1}
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742737
+      type: {class: SubstanceInputInt, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 1
+        Description:
+          Identifier: $randomseed
+          Label: $randomseed
+          GuiGroup: 
+          GuiDescription: 
+          Type: 4
+          WidgetType: 0
+        Data: 0
+        NumericalDescription:
+          DefaultValue: 0
+          MinValue: 0
+          MaxValue: 1
+          SliderStep: 0.01
+          SliderClamp: 0
+          LabelFalse: 
+          LabelTrue: 
+          EnumValueCount: 0
+          EnumValues: []
+    - rid: 1875261145875742738
+      type: {class: SubstanceInputTexture, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 2
+        Description:
+          Identifier: top
+          Label: Top
+          GuiGroup: 
+          GuiDescription: 
+          Type: 8
+          WidgetType: 7
+        Data: {fileID: 0}
+    - rid: 1875261145875742739
+      type: {class: SubstanceInputTexture, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 3
+        Description:
+          Identifier: top_mask
+          Label: Top Mask
+          GuiGroup: 
+          GuiDescription: 
+          Type: 8
+          WidgetType: 7
+        Data: {fileID: 0}
+    - rid: 1875261145875742740
+      type: {class: SubstanceInputTexture, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 4
+        Description:
+          Identifier: bottom
+          Label: Bottom
+          GuiGroup: 
+          GuiDescription: 
+          Type: 8
+          WidgetType: 7
+        Data: {fileID: 0}
+    - rid: 1875261145875742741
+      type: {class: SubstanceInputFloat, ns: Adobe.Substance.Input, asm: Adobe.Substance}
+      data:
+        Index: 5
+        Description:
+          Identifier: blur_intensity_spaghetti_stands
+          Label: Blur Intensity - Spaghetti Strands
+          GuiGroup: 
+          GuiDescription: Adjust the blur of the spaghetti strands
+          Type: 0
+          WidgetType: 1
+        Data: 7
+        NumericalDescription:
+          DefaultValue: 7
+          MinValue: 0
+          MaxValue: 16
+          SliderStep: 0.01
+          SliderClamp: 0
+          EnumValueCount: 0
+          EnumValues: []
