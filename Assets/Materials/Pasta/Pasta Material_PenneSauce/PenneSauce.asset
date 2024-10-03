@@ -145,8 +145,8 @@ MonoBehaviour:
     uid=\"949296761\" type=\"0\" value=\"2.93\" />\n  <presetinput identifier=\"sauce_height_level\"
     uid=\"949303713\" type=\"0\" value=\"0.8\" />\n  <presetinput identifier=\"normal_sauce_noise\"
     uid=\"949838911\" type=\"0\" value=\"0.61\" />\n  <presetinput identifier=\"sauce_dirt\"
-    uid=\"948978874\" type=\"0\" value=\"0.235\" />\n  <presetinput identifier=\"meatball_coast_sauce\"
-    uid=\"949200454\" type=\"0\" value=\"3.49\" />\n  <presetinput identifier=\"roughness_meatball\"
+    uid=\"948978874\" type=\"0\" value=\"0.32\" />\n  <presetinput identifier=\"meatball_coast_sauce\"
+    uid=\"949200454\" type=\"0\" value=\"2.07\" />\n  <presetinput identifier=\"roughness_meatball\"
     uid=\"949423087\" type=\"0\" value=\"0.24\" />\n  <presetinput identifier=\"roughness_pasta\"
     uid=\"949422139\" type=\"0\" value=\"0.75\" />\n  <presetinput identifier=\"normal_pasta_noise\"
     uid=\"949472399\" type=\"0\" value=\"0.012\" />\n  <presetinput identifier=\"which_pasta_to_choose\"
@@ -410,7 +410,7 @@ MonoBehaviour:
             midtone levels
           Type: 0
           WidgetType: 1
-        Data: 0.235
+        Data: 0.32
         NumericalDescription:
           DefaultValue: 0.51
           MinValue: 0
@@ -430,7 +430,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 3.49
+        Data: 2.07
         NumericalDescription:
           DefaultValue: 1.54
           MinValue: 0

@@ -139,12 +139,13 @@ MonoBehaviour:
   Thumbnail: 
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://Spaghetti\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"1490157518\" type=\"8\" value=\"10,10\" />\n 
-    <presetinput identifier=\"roughness_sauce\" uid=\"949423365\" type=\"0\" value=\"0.96\"
-    />\n  <presetinput identifier=\"sauce_spill_color_intensity\" uid=\"949308381\"
-    type=\"0\" value=\"0.76\" />\n  <presetinput identifier=\"sauce_spill_height_intensity\"
+    <presetinput identifier=\"$randomseed\" uid=\"262400412\" type=\"4\" value=\"8989\"
+    />\n  <presetinput identifier=\"roughness_sauce\" uid=\"949423365\" type=\"0\"
+    value=\"0.96\" />\n  <presetinput identifier=\"sauce_spill_color_intensity\"
+    uid=\"949308381\" type=\"0\" value=\"0.76\" />\n  <presetinput identifier=\"sauce_spill_height_intensity\"
     uid=\"949296761\" type=\"0\" value=\"3.88\" />\n  <presetinput identifier=\"sauce_height_level\"
-    uid=\"949303713\" type=\"0\" value=\"0.842\" />\n  <presetinput identifier=\"sauce_dirt\"
-    uid=\"948978874\" type=\"0\" value=\"0.57\" />\n  <presetinput identifier=\"meatball_coast_sauce\"
+    uid=\"949303713\" type=\"0\" value=\"0.879\" />\n  <presetinput identifier=\"sauce_dirt\"
+    uid=\"948978874\" type=\"0\" value=\"0.48\" />\n  <presetinput identifier=\"meatball_coast_sauce\"
     uid=\"949200454\" type=\"0\" value=\"4.93\" />\n  <presetinput identifier=\"roughness_meatball\"
     uid=\"949423087\" type=\"0\" value=\"0.56\" />\n  <presetinput identifier=\"roughness_pasta\"
     uid=\"949422139\" type=\"0\" value=\"0.75\" />\n  <presetinput identifier=\"normal_pasta_noise\"
@@ -250,7 +251,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 4
           WidgetType: 0
-        Data: 0
+        Data: 8989
         NumericalDescription:
           DefaultValue: 0
           MinValue: 0
@@ -355,7 +356,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 0.842
+        Data: 0.879
         NumericalDescription:
           DefaultValue: 0.76
           MinValue: 0.35
@@ -396,7 +397,7 @@ MonoBehaviour:
             midtone levels
           Type: 0
           WidgetType: 1
-        Data: 0.57
+        Data: 0.48
         NumericalDescription:
           DefaultValue: 0.51
           MinValue: 0

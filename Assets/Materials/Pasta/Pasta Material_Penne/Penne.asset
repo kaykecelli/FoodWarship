@@ -137,7 +137,22 @@ MonoBehaviour:
   PhysicalSize: {x: 0, y: 0, z: 0}
   EnablePhysicalSize: 0
   Thumbnail: 
-  CurrentStatePreset: 
+  CurrentStatePreset: " <sbspreset pkgurl=\"pkg://Spaghetti\" label=\"\" >\n  <presetinput
+    identifier=\"$outputsize\" uid=\"1490157518\" type=\"8\" value=\"10,10\" />\n 
+    <presetinput identifier=\"roughness_sauce\" uid=\"949423365\" type=\"0\" value=\"0\"
+    />\n  <presetinput identifier=\"sauce_spill_color_intensity\" uid=\"949308381\"
+    type=\"0\" value=\"0\" />\n  <presetinput identifier=\"sauce_spill_height_intensity\"
+    uid=\"949296761\" type=\"0\" value=\"50\" />\n  <presetinput identifier=\"sauce_height_level\"
+    uid=\"949303713\" type=\"0\" value=\"1\" />\n  <presetinput identifier=\"normal_sauce_noise\"
+    uid=\"949838911\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"sauce_dirt\"
+    uid=\"948978874\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"meatball_coast_sauce\"
+    uid=\"949200454\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"meatball_a_amount\"
+    uid=\"949948260\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"meatball_b_amount\"
+    uid=\"949952003\" type=\"4\" value=\"1\" />\n  <presetinput identifier=\"roughness_meatball\"
+    uid=\"949423087\" type=\"0\" value=\"0\" />\n  <presetinput identifier=\"roughness_pasta\"
+    uid=\"949422139\" type=\"0\" value=\"0.75\" />\n  <presetinput identifier=\"normal_pasta_noise\"
+    uid=\"949472399\" type=\"0\" value=\"0.012\" />\n  <presetinput identifier=\"which_pasta_to_choose\"
+    uid=\"948999535\" type=\"4\" value=\"2\" />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
   GenerateAllMipmaps: 1

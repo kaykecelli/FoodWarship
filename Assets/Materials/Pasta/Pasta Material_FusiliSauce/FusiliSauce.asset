@@ -45,7 +45,7 @@ MonoBehaviour:
       Index: 0
       Type: 8
       Channel: normal
-    OutputTexture: {fileID: 2800000, guid: cc03d129f1a41294f954e91f3ab8a4ad, type: 3}
+    OutputTexture: {fileID: 0}
     sRGB: 0
     IsVirtual: 0
     IsAlphaAssignable: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
       Index: 2
       Type: 8
       Channel: height
-    OutputTexture: {fileID: 2800000, guid: 4b627c4d5ded632489f9d0a41cbad29f, type: 3}
+    OutputTexture: {fileID: 0}
     sRGB: 1
     IsVirtual: 0
     IsAlphaAssignable: 1
@@ -109,7 +109,7 @@ MonoBehaviour:
       Index: 4
       Type: 8
       Channel: baseColor
-    OutputTexture: {fileID: 2800000, guid: 1f40c473555f9a348a4fae87897180f4, type: 3}
+    OutputTexture: {fileID: 0}
     sRGB: 1
     IsVirtual: 0
     IsAlphaAssignable: 1
@@ -125,7 +125,7 @@ MonoBehaviour:
       Index: 5
       Type: 8
       Channel: mask
-    OutputTexture: {fileID: 2800000, guid: b58ef81d1b0fc2a46bcb488c2dccad81, type: 3}
+    OutputTexture: {fileID: 0}
     sRGB: 0
     IsVirtual: 1
     IsAlphaAssignable: 0
@@ -137,7 +137,19 @@ MonoBehaviour:
   PhysicalSize: {x: 0, y: 0, z: 0}
   EnablePhysicalSize: 0
   Thumbnail: 
-  CurrentStatePreset: 
+  CurrentStatePreset: " <sbspreset pkgurl=\"pkg://Spaghetti\" label=\"\" >\n  <presetinput
+    identifier=\"$outputsize\" uid=\"1490157518\" type=\"8\" value=\"10,10\" />\n 
+    <presetinput identifier=\"$randomseed\" uid=\"262400412\" type=\"4\" value=\"330\"
+    />\n  <presetinput identifier=\"roughness_sauce\" uid=\"949423365\" type=\"0\"
+    value=\"0.96\" />\n  <presetinput identifier=\"sauce_spill_color_intensity\"
+    uid=\"949308381\" type=\"0\" value=\"0.64\" />\n  <presetinput identifier=\"sauce_spill_height_intensity\"
+    uid=\"949296761\" type=\"0\" value=\"3.88\" />\n  <presetinput identifier=\"sauce_height_level\"
+    uid=\"949303713\" type=\"0\" value=\"0.8\" />\n  <presetinput identifier=\"sauce_dirt\"
+    uid=\"948978874\" type=\"0\" value=\"0.395\" />\n  <presetinput identifier=\"meatball_coast_sauce\"
+    uid=\"949200454\" type=\"0\" value=\"2.16\" />\n  <presetinput identifier=\"roughness_meatball\"
+    uid=\"949423087\" type=\"0\" value=\"0.24\" />\n  <presetinput identifier=\"roughness_pasta\"
+    uid=\"949422139\" type=\"0\" value=\"0.75\" />\n  <presetinput identifier=\"normal_pasta_noise\"
+    uid=\"949472399\" type=\"0\" value=\"0.028\" />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
   GenerateAllMipmaps: 1
@@ -159,8 +171,8 @@ MonoBehaviour:
     uid=\"949472399\" type=\"0\" value=\"0.012\" />\n  <presetinput identifier=\"which_pasta_to_choose\"
     uid=\"948999535\" type=\"4\" value=\"1\" />\n </sbspreset>\n"
   MaterialShader: HDRP/LitTessellation
-  RenderTextures: 0
-  OutputRemaped: 0
+  RenderTextures: 1
+  OutputRemaped: 1
   Presets:
   - Info:
       Label: Spaghetti No Sauce
@@ -251,7 +263,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 4
           WidgetType: 0
-        Data: 0
+        Data: 330
         NumericalDescription:
           DefaultValue: 0
           MinValue: 0
@@ -397,7 +409,7 @@ MonoBehaviour:
             midtone levels
           Type: 0
           WidgetType: 1
-        Data: 0.48
+        Data: 0.395
         NumericalDescription:
           DefaultValue: 0.51
           MinValue: 0
@@ -417,7 +429,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 1.75
+        Data: 2.16
         NumericalDescription:
           DefaultValue: 1.54
           MinValue: 0
