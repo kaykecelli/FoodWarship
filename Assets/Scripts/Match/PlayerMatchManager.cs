@@ -101,6 +101,7 @@ public class PlayerMatchManager : MonoBehaviour
     {
         if(shipCounter <= 0)
         {
+            Debug.Log("Win");
             MacthManager.instance.Win(target);
         }
     }
@@ -108,5 +109,13 @@ public class PlayerMatchManager : MonoBehaviour
     public void AtualizeUICounter(int maxValue)
     {
         counterUI.text = shipCounter.ToString() + "/" + maxValue.ToString();
+    }
+    public void FinishGame()
+    {
+        placementSystem.enabled = false;
+        attackSystem.enabled = false;
+        placementUI.SetActive(false);
+        attackUI.SetActive(false);
+        generalUI.SetActive(false);
     }
 }

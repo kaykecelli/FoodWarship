@@ -63,7 +63,7 @@ public class PlacementSystem : MonoBehaviour
 
     private void PlaceStructure()
     {
-        if (currentShipsQuantity < maxShipsQuantity)
+        if (currentShipsQuantity <= maxShipsQuantity)
         {
             if (!playerMatchManager.isMyTurn && !MacthManager.instance.canPlaceShips)
             {

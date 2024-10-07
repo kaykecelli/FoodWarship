@@ -180,4 +180,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointB: {x: 0, y: 0, z: 0}
   height: 2
-  duration: 2
+  duration: 4

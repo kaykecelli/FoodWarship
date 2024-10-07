@@ -85,6 +85,9 @@ public class MacthManager : MonoBehaviour
     }
     public void Win(GameObject winner)
     {
+        currentPlayerMatchManager = currentPlayer.GetComponent<PlayerMatchManager>();
+        currentPlayerMatchManager.FinishGame();
+        targetPlayerMatchManager.FinishGame();
         winUI.SetActive(true);
         TextMeshProUGUI winnerText = winUI.GetComponentInChildren<TextMeshProUGUI>();
         winnerText.text = "Winner: " + winner.name;

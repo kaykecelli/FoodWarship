@@ -53,7 +53,9 @@ public class ShipsManager : MonoBehaviour
     }
     public void CheckIsAlive()
     {
-        if(shipLife <= 0)
+     
+
+        if (shipLife <= 0)
         {
             playerMatchManager.shipCounter--;
             playerMatchManager.IsAlive();

@@ -9,7 +9,7 @@ public class AttackSystem : MonoBehaviour
     [SerializeField] private GameObject mouseIndicator, cellIndicator;
     [SerializeField] private int maxAttacksRound;
     [SerializeField] private InputManager inputManager;
-   
+    [SerializeField] GameObject attackData;
     [SerializeField] private Grid enemyGrid;
 
 
@@ -43,30 +43,36 @@ public class AttackSystem : MonoBehaviour
 
     private void MarkAttackPosition()
     {
-        if (inputManager.IsPointerOverUI())
-        {
-            return;
-        }
-
         if (attackCounter <= maxAttacksRound)
         {
-            attackMarker = Instantiate(cellIndicator, enemyGrid.CellToWorld(gridPosition), Quaternion.identity);
+            if (inputManager.IsPointerOverUI())
+            {
+                return;
+            }
+
+
+            attackMarker = Instantiate(cellIndicator, attackData.transform);
+            attackMarker.transform.position = enemyGrid.CellToWorld(gridPosition);
             Renderer renderer = attackMarker.GetComponentInChildren<Renderer>();
             renderer.material.color = Color.red;
             attacksPosition.Add(enemyGrid.CellToWorld(gridPosition));
-            //attackMarkersGameObject.Add(attackMarker);
+            attackCounter++;
         }
        
     }
 
     public void Attack()
     {
-
+        for(int i = 0; i < attackData.transform.childCount; i++)
+        {
+           Destroy(attackData.transform.GetChild(i).gameObject);
+        }
+        attackCounter = 0;
         StartCoroutine(RealizeAttacks());
     }
 
     private IEnumerator RealizeAttacks()
-    {
+    {       
         while(attacksPosition.Count > 0)
         {
             for (int i = 0; i < attacksPosition.Count; i++)
@@ -75,8 +81,7 @@ public class AttackSystem : MonoBehaviour
                 bullet.GetComponent<Bullet>().pointB = attacksPosition[i];
                 bullet.GetComponent<Bullet>().CallShoot();
                 attacksPosition.RemoveAt(i);
-                //Destroy(attackMarkersGameObject[0]);
-                // attackMarkersGameObject.RemoveAt(0);
+                
 
                 if (attacksPosition.Count >= 0)
                 {
