@@ -7,6 +7,7 @@ public class ShipsManager : MonoBehaviour
     private MeshRenderer[] meshRenderers;
     private PlayerMatchManager playerMatchManager;
     public int shipLife;
+    public Material hitMaterial;
     private void Start()
     {
         meshRenderers = new MeshRenderer[transform.childCount];

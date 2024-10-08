@@ -16,15 +16,20 @@ MonoBehaviour:
   - <Name>k__BackingField: Destroyer
     <ID>k__BackingField: 0
     <Size>k__BackingField: {x: 1, y: 1}
-    <Prefab>k__BackingField: {fileID: 6285573483116645814, guid: fb7ffbb793261ad46894664c3c3a271c,
+    <Prefab>k__BackingField: {fileID: 610900484186949379, guid: 9daf3fa258b7b7743b04ba4565d0c03f,
       type: 3}
   - <Name>k__BackingField: Battleship
     <ID>k__BackingField: 1
     <Size>k__BackingField: {x: 2, y: 1}
-    <Prefab>k__BackingField: {fileID: 5279438079929860209, guid: d6af086f1cac71f40b4e5d3287c4be11,
+    <Prefab>k__BackingField: {fileID: 7340970819278415380, guid: 47497aa370a8c6742826a71ce1bd4af1,
       type: 3}
   - <Name>k__BackingField: Tank
     <ID>k__BackingField: 2
     <Size>k__BackingField: {x: 2, y: 2}
-    <Prefab>k__BackingField: {fileID: 5169834381107977510, guid: 6d960186cd63ed0488cd1933aa261080,
+    <Prefab>k__BackingField: {fileID: 3390147931592306374, guid: 20f6d59821f07d144a90bbb66c9b57ab,
+      type: 3}
+  - <Name>k__BackingField: aircraft carrier
+    <ID>k__BackingField: 3
+    <Size>k__BackingField: {x: 2, y: 4}
+    <Prefab>k__BackingField: {fileID: 5240591406659538429, guid: a38446327e7b6a045845699480831cbe,
       type: 3}

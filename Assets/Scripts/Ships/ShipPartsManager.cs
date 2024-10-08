@@ -18,7 +18,7 @@ public class ShipPartsManager : MonoBehaviour
         if (bulletScript != null)
         {
             shipsManager.shipLife--;
-            render.material.color = Color.red;
+            render.material = shipsManager.hitMaterial;
             shipsManager.CheckIsAlive();
         }
     }
