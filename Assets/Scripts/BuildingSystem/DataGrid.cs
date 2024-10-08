@@ -45,6 +45,19 @@ public class DataGrid
         }
         return true;
     }
+    public void RemoveObjectAt(Vector3Int gridPosition, Vector2 objectSize)
+    {
+        List<Vector3Int> positionToOccupy = CalculatePosition(gridPosition, objectSize);
+        foreach (var pos in positionToOccupy)
+        {
+            if (placedObjects.ContainsKey(pos))
+            {
+                placedObjects[pos] = null;
+                placedObjects.Remove(pos);
+            }
+        }
+        
+    }
 }
 
 public class PlacementData

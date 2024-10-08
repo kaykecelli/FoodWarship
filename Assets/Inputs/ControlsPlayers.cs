@@ -53,6 +53,15 @@ public partial class @ControlsPlayers: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseRightClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""43747114-0380-4f1b-aadb-71e964ef0b85"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -88,6 +97,17 @@ public partial class @ControlsPlayers: IInputActionCollection2, IDisposable
                     ""action"": ""Exit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3d5a6ef-f303-433b-8655-c06ffbaa629c"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseRightClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -99,6 +119,7 @@ public partial class @ControlsPlayers: IInputActionCollection2, IDisposable
         m_PlayerActionMap_MousePosition = m_PlayerActionMap.FindAction("MousePosition", throwIfNotFound: true);
         m_PlayerActionMap_MouseClick = m_PlayerActionMap.FindAction("MouseClick", throwIfNotFound: true);
         m_PlayerActionMap_Exit = m_PlayerActionMap.FindAction("Exit", throwIfNotFound: true);
+        m_PlayerActionMap_MouseRightClick = m_PlayerActionMap.FindAction("MouseRightClick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -163,6 +184,7 @@ public partial class @ControlsPlayers: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActionMap_MousePosition;
     private readonly InputAction m_PlayerActionMap_MouseClick;
     private readonly InputAction m_PlayerActionMap_Exit;
+    private readonly InputAction m_PlayerActionMap_MouseRightClick;
     public struct PlayerActionMapActions
     {
         private @ControlsPlayers m_Wrapper;
@@ -170,6 +192,7 @@ public partial class @ControlsPlayers: IInputActionCollection2, IDisposable
         public InputAction @MousePosition => m_Wrapper.m_PlayerActionMap_MousePosition;
         public InputAction @MouseClick => m_Wrapper.m_PlayerActionMap_MouseClick;
         public InputAction @Exit => m_Wrapper.m_PlayerActionMap_Exit;
+        public InputAction @MouseRightClick => m_Wrapper.m_PlayerActionMap_MouseRightClick;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActionMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -188,6 +211,9 @@ public partial class @ControlsPlayers: IInputActionCollection2, IDisposable
             @Exit.started += instance.OnExit;
             @Exit.performed += instance.OnExit;
             @Exit.canceled += instance.OnExit;
+            @MouseRightClick.started += instance.OnMouseRightClick;
+            @MouseRightClick.performed += instance.OnMouseRightClick;
+            @MouseRightClick.canceled += instance.OnMouseRightClick;
         }
 
         private void UnregisterCallbacks(IPlayerActionMapActions instance)
@@ -201,6 +227,9 @@ public partial class @ControlsPlayers: IInputActionCollection2, IDisposable
             @Exit.started -= instance.OnExit;
             @Exit.performed -= instance.OnExit;
             @Exit.canceled -= instance.OnExit;
+            @MouseRightClick.started -= instance.OnMouseRightClick;
+            @MouseRightClick.performed -= instance.OnMouseRightClick;
+            @MouseRightClick.canceled -= instance.OnMouseRightClick;
         }
 
         public void RemoveCallbacks(IPlayerActionMapActions instance)
@@ -223,5 +252,6 @@ public partial class @ControlsPlayers: IInputActionCollection2, IDisposable
         void OnMousePosition(InputAction.CallbackContext context);
         void OnMouseClick(InputAction.CallbackContext context);
         void OnExit(InputAction.CallbackContext context);
+        void OnMouseRightClick(InputAction.CallbackContext context);
     }
 }

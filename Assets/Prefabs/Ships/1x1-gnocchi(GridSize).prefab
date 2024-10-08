@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 66618879526246254}
   - component: {fileID: 4866687897661415030}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 1x1-gnocchi(GridSize)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,8 +45,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b91d3f586916a4981aaeca06bd5da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCookingReady: 2
+  hasEspecialBehaviour: 0
   shipLife: 0
+  smokeEffect: {fileID: 411654687377022969, guid: bc1ec14514b317b4f9f3efd56b5a3707,
+    type: 3}
+  leafObj: {fileID: 2115379370782951050, guid: 45dade9903be3bf4ea9f1add9d415bed, type: 3}
+  spawnIteractionPos: {fileID: 5033566548466815102}
+  index: 0
+  hitUI: {fileID: 2961762546921389865, guid: a340ff37cf08f314baa4d3d84f3150b6, type: 3}
   hitMaterial: {fileID: 2100000, guid: 4794e4ddeb8b44f428a65b4a1cbe308c, type: 2}
+--- !u!1 &5033566548466815102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 778325239348622014}
+  m_Layer: 7
+  m_Name: SpawnPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &778325239348622014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5033566548466815102}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2602689342642325617}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5271470951577271498
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +99,7 @@ GameObject:
   - component: {fileID: 9003700371387103655}
   - component: {fileID: 4968565902235374185}
   - component: {fileID: 5674657345763003534}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: gnocchi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +118,8 @@ Transform:
   m_LocalPosition: {x: 1.05, y: 0, z: 1.074}
   m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.099999994}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 778325239348622014}
   m_Father: {fileID: 66618879526246254}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7598203406185707445

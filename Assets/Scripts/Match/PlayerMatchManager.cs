@@ -18,7 +18,7 @@ public class PlayerMatchManager : MonoBehaviour
     private int index;
 
     [Header("Ship counter")]
-    [HideInInspector]public int shipCounter;
+    public int shipCounter;
     [SerializeField] private TextMeshProUGUI counterUI;
 
     public event Action OnEnableShips, OnDisableShips;
@@ -77,7 +77,6 @@ public class PlayerMatchManager : MonoBehaviour
         {
             gridVisualization.layer = LayerMask.NameToLayer("Target");
         }
-       Debug.Log(LayerMask.NameToLayer("Target"));
     }
     public void ChangeCamera()
     {

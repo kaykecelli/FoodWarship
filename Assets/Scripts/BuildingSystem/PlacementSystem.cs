@@ -35,10 +35,15 @@ public class PlacementSystem : MonoBehaviour
         StopPlacement();
         SetUp();
     }
+    private void OnEnable()
+    {
+        inputManager.OnRemoveStructure += RemoveStructure;
+    }
     private void OnDisable()
     {
         inputManager.OnClicked -= PlaceStructure;
         inputManager.OnExit -= StopPlacement;
+        inputManager.OnRemoveStructure -= RemoveStructure;
     }
     private void SetUp()
     {
@@ -88,10 +93,33 @@ public class PlacementSystem : MonoBehaviour
             placedObjects.Add(newObj);
             shipsData.AddObjectAt(gridPosition, databaseSO.objectsData[selectedObjectIndex].Size, databaseSO.objectsData[selectedObjectIndex].ID, placedObjects.Count - 1);
             playerMatchManager.shipCounter++;
-            playerMatchManager.AtualizeUICounter(maxShipsQuantity);
             currentShipsQuantity++;
+            playerMatchManager.AtualizeUICounter(maxShipsQuantity);
         }
        
+    }
+    private void RemoveStructure()
+    {
+        StopPlacement();
+        if (inputManager.IsPointerOverUI())
+        {
+            return;
+        }
+        GameObject selectedObj = inputManager.GetShipToRemove();
+        int selectedObjectIndex = selectedObj.GetComponent<ShipsManager>().index;
+        Vector3 mousePosition = inputManager.GetMousePosition();
+        Vector3Int gridPosition = grid.WorldToCell(mousePosition);
+
+        bool placementValidity = GetPlacementValidity(gridPosition, selectedObjectIndex);
+        if (placementValidity == false)
+        {
+            
+            shipsData.RemoveObjectAt(gridPosition, databaseSO.objectsData[selectedObjectIndex].Size);
+            Destroy(selectedObj);
+            currentShipsQuantity--;
+            playerMatchManager.shipCounter--;
+            playerMatchManager.AtualizeUICounter(maxShipsQuantity);
+        }
     }
 
     private bool GetPlacementValidity(Vector3Int gridPosition, int selectedObjectIndex)

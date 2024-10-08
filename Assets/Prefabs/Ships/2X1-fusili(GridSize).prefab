@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2506271500641792211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1069386983648820341}
+  m_Layer: 7
+  m_Name: SpawanLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1069386983648820341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506271500641792211}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.903584, y: 5.1499715, z: -1.5313523}
+  m_LocalScale: {x: 5.509642, y: 5.6593094, z: 9.0612545}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3216986610672296012}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4938547998486143630
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +44,7 @@ GameObject:
   - component: {fileID: 2926940652499160207}
   - component: {fileID: 5193686663992319056}
   - component: {fileID: 3319080569520295383}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: fusili
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6285189576719615654}
   - component: {fileID: 5020277885537008388}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 2X1-fusili(GridSize)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +195,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b91d3f586916a4981aaeca06bd5da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCookingReady: 2
+  hasEspecialBehaviour: 0
   shipLife: 0
+  smokeEffect: {fileID: 411654687377022969, guid: bc1ec14514b317b4f9f3efd56b5a3707,
+    type: 3}
+  leafObj: {fileID: 2115379370782951050, guid: 45dade9903be3bf4ea9f1add9d415bed, type: 3}
+  spawnIteractionPos: {fileID: 2506271500641792211}
+  index: 1
+  hitUI: {fileID: 2961762546921389865, guid: a340ff37cf08f314baa4d3d84f3150b6, type: 3}
   hitMaterial: {fileID: 2100000, guid: 71981a279553d08439c311baa1a86b74, type: 2}
 --- !u!1 &8493737448712880222
 GameObject:
@@ -179,7 +218,7 @@ GameObject:
   - component: {fileID: 4325226399158763698}
   - component: {fileID: 6842046842685020579}
   - component: {fileID: 2905445109486308851}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: fusili
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +237,8 @@ Transform:
   m_LocalPosition: {x: 5.57, y: 0, z: 0.99}
   m_LocalScale: {x: 0.18149999, y: 0.1767, z: 0.110360004}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1069386983648820341}
   m_Father: {fileID: 6285189576719615654}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4292573698795608597

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1696188938822809925}
   - component: {fileID: 1652266427767068273}
   - component: {fileID: 3402675129632040573}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spaghetti.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,6 +118,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.9898698, y: 4.283654, z: 7.8778934}
   m_Center: {x: -3.7309844, y: 1.451824, z: -4.767618}
+--- !u!1 &560925612898390713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2848623206361788320}
+  m_Layer: 7
+  m_Name: SpawanLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2848623206361788320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560925612898390713}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.76, y: 4.55, z: 0.33}
+  m_LocalScale: {x: 4.625773, y: 5, z: 2.6775298}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 571411655340486508}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1822688244343380273
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +162,7 @@ GameObject:
   - component: {fileID: 6406853232491417199}
   - component: {fileID: 537623067578310887}
   - component: {fileID: 3284241312069765840}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spaghetti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +181,8 @@ Transform:
   m_LocalPosition: {x: 2.068, y: 0, z: 3.568}
   m_LocalScale: {x: 0.3734785, y: 0.2, z: 0.21618001}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2848623206361788320}
   m_Father: {fileID: 8594446709858854690}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &4897043465982891464
@@ -249,7 +281,7 @@ GameObject:
   - component: {fileID: 1400195883371564807}
   - component: {fileID: 6466414709637759319}
   - component: {fileID: 4101322241902152078}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spaghetti.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +399,7 @@ GameObject:
   - component: {fileID: 8299841403924360297}
   - component: {fileID: 5017600151979426687}
   - component: {fileID: 249632066111661271}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spaghetti.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +517,7 @@ GameObject:
   - component: {fileID: 1072123475805138282}
   - component: {fileID: 3007378740901785036}
   - component: {fileID: 8626028697639229976}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spaghetti.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8594446709858854690}
   - component: {fileID: 6060128053236371136}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 2x4-spaghetti(GridSize)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +674,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b91d3f586916a4981aaeca06bd5da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCookingReady: 2
+  hasEspecialBehaviour: 1
   shipLife: 0
+  smokeEffect: {fileID: 411654687377022969, guid: bc1ec14514b317b4f9f3efd56b5a3707,
+    type: 3}
+  leafObj: {fileID: 2115379370782951050, guid: 45dade9903be3bf4ea9f1add9d415bed, type: 3}
+  spawnIteractionPos: {fileID: 560925612898390713}
+  index: 3
+  hitUI: {fileID: 2961762546921389865, guid: a340ff37cf08f314baa4d3d84f3150b6, type: 3}
   hitMaterial: {fileID: 2100000, guid: 22a47c074fd5b544aaff863bebbcf0ad, type: 2}
 --- !u!1 &5461693203844607912
 GameObject:
@@ -657,7 +697,7 @@ GameObject:
   - component: {fileID: 9097172608729658845}
   - component: {fileID: 6691358970535973024}
   - component: {fileID: 6579206263733322689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spaghetti.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +815,7 @@ GameObject:
   - component: {fileID: 5910966936752345006}
   - component: {fileID: 2443623469209329081}
   - component: {fileID: 778442265583612331}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spaghetti.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -893,7 +933,7 @@ GameObject:
   - component: {fileID: 8107222795142585220}
   - component: {fileID: 2421721078032541159}
   - component: {fileID: 5743099085994251953}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spaghetti.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
