@@ -674,7 +674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b91d3f586916a4981aaeca06bd5da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCookingReady: 2
+  maxCookingReady: 3
   hasEspecialBehaviour: 1
   shipLife: 0
   smokeEffect: {fileID: 411654687377022969, guid: bc1ec14514b317b4f9f3efd56b5a3707,
