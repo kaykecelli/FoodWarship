@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointB: {x: 0, y: 0, z: 0}
-  height: 5
-  duration: 2
-  hitUI: {fileID: 2961762546921389865, guid: a340ff37cf08f314baa4d3d84f3150b6, type: 3}
+  height: 90
+  duration: 3
+  hitUI: {fileID: 6010320509987519208, guid: a340ff37cf08f314baa4d3d84f3150b6, type: 3}
+  hasHitAShip: 0

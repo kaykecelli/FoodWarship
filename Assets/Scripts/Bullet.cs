@@ -8,7 +8,8 @@ public class Bullet : MonoBehaviour
     public Vector3 pointB; // End point
     [SerializeField] private float height = 2f; // Height of the arc
     [SerializeField] private float duration = 2f; // Duration of the movement
-     [SerializeField] private Canvas hitUI;
+     [SerializeField] private GameObject hitUI;
+    public bool hasHitAShip;
     public void CallShoot()
     {
         StartCoroutine(MoveInArc(transform.position, pointB, height, duration));
@@ -34,16 +35,21 @@ public class Bullet : MonoBehaviour
 
         // Ensure the final position is exactly at point B
         transform.position = end;
-        Destroy(gameObject,0.5f);
+        if (!hasHitAShip)
+        {
+            DisplayUi();
+        }
+        Destroy(gameObject,1.2f);
     }
    public void DisplayUi()
    {
-        Canvas hitCanvas = Instantiate( hitUI,transform.position, Quaternion.identity);
+        GameObject hitCanvas = Instantiate( hitUI,transform.position, Quaternion.identity);
         hitCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
         TextMeshProUGUI textMeshProUGUI = hitCanvas.GetComponentInChildren<TextMeshProUGUI>();
         textMeshProUGUI.transform.LookAt(Camera.main.transform.position);
         textMeshProUGUI.text = "MISS";
         textMeshProUGUI.color = Color.white;
+        Destroy(hitCanvas, 1f);
     }
 
 }

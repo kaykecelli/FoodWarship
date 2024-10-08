@@ -17,7 +17,7 @@ public class ShipsManager : MonoBehaviour
     [SerializeField] private GameObject leafObj;
     public GameObject spawnIteractionPos;
     public int index;
-    public Canvas hitUI;
+    public GameObject hitUI;
     private bool canCook = true;
     public Material hitMaterial;
 
@@ -102,7 +102,6 @@ public class ShipsManager : MonoBehaviour
         while(transform.localScale.z != posToGrow)
         {
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, Mathf.Lerp(transform.localScale.z, posToGrow, 0.5f * Time.deltaTime));
-            Debug.Log("still workin");
             if(transform.localScale.z >= 0.70f)
             {
                 break;

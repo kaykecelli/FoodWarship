@@ -15,7 +15,8 @@ public class MacthManager : MonoBehaviour
     private GameObject target, currentPlayer;
     private PlayerMatchManager currentPlayerMatchManager, targetPlayerMatchManager;
 
-    [SerializeField] private GameObject ui;
+    [SerializeField] private GameObject transitionTurnUI;
+    [SerializeField] private TextMeshProUGUI nextPlayerName;
     private string turnToCall;
     public bool canPlaceShips {  get; private set; }
     public bool canAttack {  get; private set; }
@@ -74,14 +75,15 @@ public class MacthManager : MonoBehaviour
 
         ChooseTypeOfTurn();
         transitionCamera.Priority = 4;
-        ui.SetActive(true);
+        transitionTurnUI.SetActive(true);
+        nextPlayerName.text ="Next player: " + this.currentPlayer.name;
     }
   
     public void StartNextRound()
     {
         Invoke(turnToCall, 0f);
         transitionCamera.Priority = 0;
-        ui.SetActive(false);
+        transitionTurnUI.SetActive(false);
     }
     public void Win(GameObject winner)
     {

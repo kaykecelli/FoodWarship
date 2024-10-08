@@ -14,10 +14,11 @@ public class CheckIfBulletHits : MonoBehaviour
     {
         if(collision.transform.gameObject.layer == shipLayer)
         {
+            bullet.hasHitAShip = true;
             return;
         }
 
-        bullet.DisplayUi();
+        bullet.hasHitAShip = false;
 
     }
 }
