@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
         {
             DisplayHitUI();
         }
-        Destroy(gameObject,1.2f);
+        Destroy(gameObject,2f);
     }
    public void DisplayMissUI()
     {
@@ -53,9 +53,9 @@ public class Bullet : MonoBehaviour
         hitCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
         TextMeshProUGUI textMeshProUGUI = hitCanvas.GetComponentInChildren<TextMeshProUGUI>();
         textMeshProUGUI.transform.LookAt(Camera.main.transform.position);
-        textMeshProUGUI.text = "MISS";
-        textMeshProUGUI.color = Color.white;
-        Destroy(hitCanvas, 1f);
+        textMeshProUGUI.text = "SSIM";
+        textMeshProUGUI.color = Color.black;
+        Destroy(hitCanvas, 1.5f);
     }
     public void DisplayHitUI()
     {
@@ -64,9 +64,9 @@ public class Bullet : MonoBehaviour
         hitCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
         TextMeshProUGUI textMeshProUGUI = hitCanvas.GetComponentInChildren<TextMeshProUGUI>();
         textMeshProUGUI.transform.LookAt(Camera.main.transform.position);
-        textMeshProUGUI.text = "HIT";
+        textMeshProUGUI.text = "TIH";
         textMeshProUGUI.color = Color.red;
-        Destroy(hitCanvas, 1f);
+        Destroy(hitCanvas, 1.5f);
     }
 
 }

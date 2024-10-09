@@ -653,6 +653,7 @@ MonoBehaviour:
   maxAttacksRound: 3
   inputManager: {fileID: 9193523396508425816}
   attackData: {fileID: 6261886379391394010}
+  markShipData: {fileID: 5408255598751360781}
   enemyGrid: {fileID: 0}
   bulletPrefab: {fileID: 6217940359746984124, guid: 34ef814390b2d0d49bf9f8c8c89b5b80,
     type: 3}
