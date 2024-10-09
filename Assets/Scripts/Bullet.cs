@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public Vector3 pointB; // End point
     [SerializeField] private float height = 2f; // Height of the arc
     [SerializeField] private float duration = 2f; // Duration of the movement
-     [SerializeField] private GameObject hitUI;
+    [SerializeField] private GameObject hitUI;
     public bool hasHitAShip;
     public void CallShoot()
     {
@@ -35,20 +35,37 @@ public class Bullet : MonoBehaviour
 
         // Ensure the final position is exactly at point B
         transform.position = end;
+        Debug.Log(hasHitAShip);
         if (!hasHitAShip)
         {
-            DisplayUi();
+            DisplayMissUI();
+        }
+        else
+        {
+            DisplayHitUI();
         }
         Destroy(gameObject,1.2f);
     }
-   public void DisplayUi()
-   {
-        GameObject hitCanvas = Instantiate( hitUI,transform.position, Quaternion.identity);
+   public void DisplayMissUI()
+    {
+        Vector3 posToSpawn = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        GameObject hitCanvas = Instantiate(hitUI, posToSpawn, Quaternion.identity);
         hitCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
         TextMeshProUGUI textMeshProUGUI = hitCanvas.GetComponentInChildren<TextMeshProUGUI>();
         textMeshProUGUI.transform.LookAt(Camera.main.transform.position);
         textMeshProUGUI.text = "MISS";
         textMeshProUGUI.color = Color.white;
+        Destroy(hitCanvas, 1f);
+    }
+    public void DisplayHitUI()
+    {
+        Vector3 posToSpawn = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        GameObject hitCanvas = Instantiate(hitUI,posToSpawn, Quaternion.identity);
+        hitCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
+        TextMeshProUGUI textMeshProUGUI = hitCanvas.GetComponentInChildren<TextMeshProUGUI>();
+        textMeshProUGUI.transform.LookAt(Camera.main.transform.position);
+        textMeshProUGUI.text = "HIT";
+        textMeshProUGUI.color = Color.red;
         Destroy(hitCanvas, 1f);
     }
 

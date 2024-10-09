@@ -16,7 +16,7 @@ MonoBehaviour:
   - <Name>k__BackingField: Destroyer
     <ID>k__BackingField: 0
     <Size>k__BackingField: {x: 1, y: 1}
-    <Prefab>k__BackingField: {fileID: 610900484186949379, guid: 9daf3fa258b7b7743b04ba4565d0c03f,
+    <Prefab>k__BackingField: {fileID: 5958875155685900710, guid: d87dd6f6d60d5e4429d0e886b7f6972c,
       type: 3}
   - <Name>k__BackingField: Battleship
     <ID>k__BackingField: 1

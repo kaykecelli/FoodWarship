@@ -17,7 +17,6 @@ public class ShipsManager : MonoBehaviour
     [SerializeField] private GameObject leafObj;
     public GameObject spawnIteractionPos;
     public int index;
-    public GameObject hitUI;
     private bool canCook = true;
     public Material hitMaterial;
 

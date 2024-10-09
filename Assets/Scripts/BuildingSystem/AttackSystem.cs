@@ -1,6 +1,8 @@
 using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -26,12 +28,27 @@ public class AttackSystem : MonoBehaviour
     private void OnEnable()
     {
         inputManager.OnClicked += MarkAttackPosition;
+        inputManager.OnRemoveStructure += MarkHasShip;
     }
     private void OnDisable()
     {
+         inputManager.OnClicked -= MarkAttackPosition;
+        inputManager.OnRemoveStructure -= MarkHasShip;
         inputManager.OnClicked -= MarkAttackPosition;
     }
+    
+    private void MarkHasShip()
+    {
 
+        if (inputManager.IsPointerOverUI())
+        {
+            return;
+        }
+        attackMarker = Instantiate(cellIndicator, attackData.transform);
+        attackMarker.transform.position = enemyGrid.CellToWorld(gridPosition);
+        Renderer renderer = attackMarker.GetComponentInChildren<Renderer>();
+        renderer.material.color = Color.green;
+    }
 
     private void FixedUpdate()
     {
