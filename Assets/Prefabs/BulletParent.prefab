@@ -182,4 +182,5 @@ MonoBehaviour:
   height: 10
   duration: 3
   hitUI: {fileID: 6010320509987519208, guid: a340ff37cf08f314baa4d3d84f3150b6, type: 3}
+  hitVFX: {fileID: 7991507977406042599, guid: 3dad045c4148e924fb9135571d3da8e7, type: 3}
   hasHitAShip: 0

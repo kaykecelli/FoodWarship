@@ -106,7 +106,7 @@ public class PlacementSystem : MonoBehaviour
             return;
         }
         GameObject selectedObj = inputManager.GetShipToRemove();
-        int selectedObjectIndex = selectedObj.GetComponent<ShipsManager>().index;
+        int selectedObjectIndex = selectedObj.GetComponentInParent<ShipsManager>().index;
         Vector3 mousePosition = inputManager.GetMousePosition();
         Vector3Int gridPosition = grid.WorldToCell(mousePosition);
 

@@ -75,7 +75,7 @@ public class ShipsManager : MonoBehaviour
         if(currentCookingCounter == maxCookingReady - 1)
         {
           VisualEffect smokeObj = Instantiate(smokeEffect, spawnIteractionPos.transform);
-          smokeObj.transform.position = transform.position;
+          smokeObj.transform.position = spawnIteractionPos.transform.position;
         }
         if (currentCookingCounter >= maxCookingReady)
         {
